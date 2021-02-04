@@ -1,0 +1,188 @@
+@import ../../../styles-variables.sass
+.navbar-toggler
+    display: flex
+    justify-content: center
+    align-items: center
+    border-color: #00000000 !important
+    color: #00000000 !important
+
+.avatar:hover ~ .loggedOptions
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+.loggedOptions:hover
+  display: flex
+
+
+.loggedOptions
+  display: none
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  background: $dark
+  color: #ffffff
+  padding: 20px 40px
+  border: 1px solid $main
+  right: 0
+  top: 10vh
+  animation: fade linear 0.3s
+  h6
+    transition: all 0.3s linear
+    cursor: pointer
+  h6:hover
+    transition: all 0.3s linear
+    color: $main
+.collapse
+  border-bottom: 1px solid $orange
+  h5
+    border-top: 1px solid $orange
+    cursor: pointer
+.navbar
+  img
+    width: 50px
+    height: 50px
+    margin-right: auto
+    cursor: pointer
+  .btn
+    color: #ffffff
+    transition: all linear 0.3s
+    border: 1px solid $orange
+    background: $orange
+  .btn:hover
+    color: $orange
+    background: #00000000
+    transition: all linear 0.3s
+  .btn-main
+    margin-right: 10px
+  .avatar
+    cursor: pointer
+    margin-right: 10px
+  .points
+    height: 23px
+    color: #ffffff
+    background: $main
+    border: 1px solid #ffffff
+    position: absolute
+    z-index: 4
+    font-weight: 600
+    font-size: 16px
+    top: 47px
+    right: 29px
+    img
+      border: 2px solid $main
+      border-radius: 50%
+
+@media (max-width: 600px)
+  .login-register
+    position: relative
+    top: 6px
+  .btn
+    padding: 5px 7px
+    h6
+      font-size: 0.8rem
+@media (max-width: 350px)
+  .btn
+    h6
+      font-size: 0.6rem
+
+
+#nav-icon2
+    width: 40px
+    height: 40px
+    position: relative
+    margin-right: 5px
+    top: 7px
+#nav-icon2 span
+  display: block
+  position: absolute
+  height: 4px
+  width: 19px
+  background: #d3531a
+  opacity: 1
+  -webkit-transform: rotate(0deg)
+  -moz-transform: rotate(0deg)
+  -o-transform: rotate(0deg)
+  transform: rotate(0deg)
+  -webkit-transition: .40s ease-in-out
+  -moz-transition: .40s ease-in-out
+  -o-transition: .40s ease-in-out
+  transition: .40s ease-in-out
+
+
+#nav-icon2 span:nth-child(even)
+  left: 19px
+  border-radius: 0 9px 9px 0
+
+
+#nav-icon2 span:nth-child(odd)
+  left:0px
+  border-radius: 9px 0 0 9px
+
+
+#nav-icon2 span:nth-child(1), #nav-icon2 span:nth-child(2)
+  top: 0px
+
+
+#nav-icon2 span:nth-child(3), #nav-icon2 span:nth-child(4)
+  top: 13px
+
+
+#nav-icon2 span:nth-child(5), #nav-icon2 span:nth-child(6)
+  top: 26px
+
+
+#nav-icon2.open span:nth-child(1),#nav-icon2.open span:nth-child(6)
+  -webkit-transform: rotate(45deg)
+  -moz-transform: rotate(45deg)
+  -o-transform: rotate(45deg)
+  transform: rotate(45deg)
+
+
+#nav-icon2.open span:nth-child(2),#nav-icon2.open span:nth-child(5)
+  -webkit-transform: rotate(-45deg)
+  -moz-transform: rotate(-45deg)
+  -o-transform: rotate(-45deg)
+  transform: rotate(-45deg)
+
+
+#nav-icon2.open span:nth-child(1)
+  left: 5px
+  top: 7px
+
+
+#nav-icon2.open span:nth-child(2)
+  left: calc(31px - 5px)
+  top: 7px
+
+
+#nav-icon2.open span:nth-child(3)
+  left: -19px
+  opacity: 0
+
+
+#nav-icon2.open span:nth-child(4)
+  left: 51%
+  top: 37%
+  border-radius: 0
+  border: #d3531a 1px solid
+  width: 10px
+  height: 10px
+  opacity: 1
+//   -webkit-transform: rotate(-45deg)
+//   -moz-transform: rotate(-45deg)
+//   -o-transform: rotate(-45deg)
+//   transform: rotate(-45deg)
+
+
+
+#nav-icon2.open span:nth-child(5)
+  left: 5px
+  top: 29px
+
+
+#nav-icon2.open span:nth-child(6)
+  left: calc(31px - 5px)
+  top: 29px
+  width: 19px

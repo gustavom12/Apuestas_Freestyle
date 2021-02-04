@@ -1,0 +1,10 @@
+<section>
+    <div class="bgimg" id="home">
+        <div class="searchcontainer d-flex justify-content-center align-items-end h-100">
+            <app-search></app-search>
+        </div>
+    </div>
+    <h2 class="title text-center h1 mt-2"> Apuestas Activas</h2>
+    <hr class="hr25 mx-auto ">
+    <app-apuestas *ngFor="let apuesta of apuestas ; let i = index ; trackBy: trackByMethod " [apuesta]="apuesta "></app-apuestas>
+</section>

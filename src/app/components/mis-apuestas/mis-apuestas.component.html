@@ -1,0 +1,16 @@
+<section class="text-center">
+  <h1 class="title mt-3 mb-4">Mis Apuestas</h1>
+  <div class="error mt-5" *ngIf="!apuestas.length">
+    <h2 class="title">
+      Aún no haz Apostado
+      <button class="mx-auto btn-main">Ir a apostar</button>
+    </h2>
+  </div>
+  <div class="apues" *ngIf="apuestas.length">
+    <app-card [apuesta]="apuesta" *ngFor="let apuesta of apuestas; let i = index"
+      [apostado]="apostado[i]"
+    ></app-card>
+  </div>
+
+</section>
+

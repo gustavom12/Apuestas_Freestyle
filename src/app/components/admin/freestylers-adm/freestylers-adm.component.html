@@ -1,0 +1,60 @@
+<form [formGroup]="Form" (ngSubmit)="OnSubmit(Form.value)">
+<div class="freestylersContainer text-center">
+  <div class="input mt-5">
+    <h5 class="text-center">Nombre</h5>
+    <p class=" text-center text-secondary">(si este nombre y existe, se modificaran los datos de dicho freestyler)</p>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Default"
+        formControlName="nombre"
+        aria-describedby="inputGroup-sizing-default"
+        id="nombre"
+        placeholder="Nombre"
+      />
+    </div>
+  </div>
+  <div class="input mt-5">
+    <h5 class="text-center">País</h5>
+    <div class="input-group mb-3">
+      <input
+        id="pais"
+        type="text"
+        class="form-control"
+        aria-label="Default"
+        formControlName="pais"
+        aria-describedby="inputGroup-sizing-default"
+        placeholder="País"
+      />
+    </div>
+  </div>
+  <div class="input mt-5">
+    <h5 class="text-center">imgUrl</h5>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Default"
+        formControlName="imgUrl"
+        id="imgUrl"
+        aria-describedby="inputGroup-sizing-default"
+        placeholder="ImgUrl"
+      />
+    </div>
+  </div>
+</div>
+<button [disabled]="Form.invalid" class="btn mb-5 mx-auto btn-primary w-25 d-flex align-items-center justify-content-center" type="submit">
+    <h5 class="w-100 ">Subir</h5>
+  </button>
+</form>
+<div *ngIf="error" class="error">
+    <div class="text-danger mx-auto text-center">
+        {{error}}
+    </div>
+</div>
+<div *ngIf="success" class="success">
+    <div class="text-success text-center">
+        {{success}}
+    </div>
+</div>

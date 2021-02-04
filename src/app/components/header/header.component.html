@@ -1,0 +1,35 @@
+<div class="collapse darkbg" id="navbarToggleExternalContent">
+  <h5 class="text-white text-center py-2 h4" routerLink="/mis-apuestas">Mis Apuestas</h5>
+  <h5 class="text-white text-center py-2 h4" routerLink="/">Home</h5>
+  <h5 class="text-white text-center py-2 h4" routerLink="/mis-apuestas">Buscar</h5>
+</div>
+  <nav class="navbar darkbg">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggle('#nav-icon2')">
+        <div id="nav-icon2" >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+      </button>
+      <img src="https://i.ibb.co/L9qXGCs/af2.png" class="align-self-start mt-1" routerLink="" alt="">
+            <!-- <div class="btn roboto align-self-end"> <h5>Apostar</h5> </div> -->
+        <div *ngIf="logged" class="avatar">
+          <img src="https://res.cloudinary.com/rivalry/image/upload/w_44,h_44,c_fill,dpr_auto,f_auto,fl_lossy,q_auto/d_avatars:default.png/avatars/c7783356-5463-11eb-8551-8662b68f6d31.png" alt="avatar">
+          <div class="points flex">${{points}}</div>
+        </div>
+        <div class="loggedOptions position-absolute">
+          <h6 routerLink="/mis-apuestas"> Mis Apuestas </h6>
+          <hr class="hr25 w-100">
+          <h6 (click)="cerrarSesion()"> Cerrar Sesión </h6>
+        </div>
+        <div class="login-register">
+          <button *ngIf="!logged" class="btn btn-main flex" routerLink="/login"><h6 class="flex">Iniciar sesión</h6></button>
+          <button class="btn flex btn-orange" *ngIf="!logged" routerLink="/register"><h6 class="flex">Registrarse</h6></button>
+        </div>
+
+    </div>
+  </nav>

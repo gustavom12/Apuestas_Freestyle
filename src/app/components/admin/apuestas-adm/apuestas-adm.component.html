@@ -1,0 +1,93 @@
+<form [formGroup]="Form" class="text-center mt-5" (ngSubmit)="OnSubmit(Form.value)">
+    <h5 class="text-center">LeftFreestylerId</h5>
+    <select
+        class="form-select"
+        aria-label="Default select example"
+        formControlName="leftFreestylerId"
+    >
+        <option value="1" *ngFor="let freestyler of freestylers" [ngValue]="freestyler._id">
+            {{ freestyler._id }}
+        <span class="text-secondary">({{ freestyler.nombre }})</span>
+        </option>
+    </select>
+    <h5 class="text-center">RightFreestylerId</h5>
+    <select
+        class="form-select"
+        formControlName="rightFreestylerId"
+        aria-label="Default select example"
+    >
+        <option value="1" *ngFor="let freestyler of freestylers" [ngValue]="freestyler._id">
+            {{ freestyler._id }}
+        <span class="text-secondary">({{ freestyler.nombre }})</span>
+        </option>
+    </select>
+    <div class="input mt-5">
+        <h5 class="text-center">leftPoints</h5>
+        <div class="input-group mb-3">
+        <input
+            type="number"
+            class="form-control"
+            aria-label="Default"
+            formControlName="leftPoints"
+            aria-describedby="inputGroup-sizing-default"
+            id="nombre"
+            placeholder="Nombre"
+        />
+        </div>
+    </div>
+    <div class="input mt-5">
+        <h5 class="text-center">rightPoints</h5>
+        <div class="input-group mb-3">
+        <input
+            type="number"
+            class="form-control"
+            aria-label="Default"
+            formControlName="rightPoints"
+            aria-describedby="inputGroup-sizing-default"
+            id="nombre"
+            placeholder="Nombre"
+        />
+        </div>
+    </div>
+    <div class="input mt-5">
+        <h5 class="text-center">Finish Date</h5>
+        <div class="input-group mb-3">
+        <input
+            type="number"
+            class="form-control"
+            aria-label="Default"
+            formControlName="finishDate"
+            aria-describedby="inputGroup-sizing-default"
+            id="nombre"
+            placeholder="Nombre"
+        />
+        </div>
+    </div>
+    <div class="input mt-5">
+        <h5 class="text-center">Organization</h5>
+        <div class="input-group mb-3">
+        <input
+            type="text"
+            class="form-control"
+            aria-label="Default"
+            formControlName="organization"
+            aria-describedby="inputGroup-sizing-default"
+            id="nombre"
+            placeholder="Nombre"
+        />
+        </div>
+    </div>
+    <button [disabled]="Form.invalid" class="btn mb-2 mx-auto btn-primary w-25 d-flex align-items-center justify-content-center" type="submit">
+        <h5 class="w-100 ">Subir</h5>
+    </button>
+</form>
+<div *ngIf="error" class="error mb-4">
+    <div class="text-danger mx-auto text-center">
+        {{error}}
+    </div>
+</div>
+<div *ngIf="success" class="success">
+    <div class="text-success text-center mb-4">
+        {{success}}
+    </div>
+</div>

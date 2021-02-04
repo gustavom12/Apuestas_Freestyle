@@ -1,0 +1,23 @@
+@import ../../../styles-variables
+footer
+  width: 100%
+  background: $dark
+  padding-top: 4vh
+  paddint-bottom: 4vh
+  color: #ffffff
+  h3
+    transition: all 0.3s linear
+    cursor: pointer
+  h3:hover
+    color: $main
+    transition: all 0.3s linear
+  a
+    color: $main
+  .text-main
+    font-size: 13px
+@media (max-width: 700px)
+  footer
+    h3
+      font-size: 1.1rem
+    .text-main
+      display: none

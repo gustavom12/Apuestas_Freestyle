@@ -1,0 +1,32 @@
+@import ../../../../styles-variables.sass
+.search
+    -webkit-box-shadow: 0px 7px 11px -10px #000000
+    box-shadow: 0px 7px 11px -10px #000000
+    display: flex
+    width: 100%
+    align-items: center
+    input
+        border: none
+        width: 65%
+        font-size: 16px
+    .btn
+        position: relative
+        z-index: 5
+        background: $darkmain
+        color: #ffffff
+        transition: all linear 0.3s
+    .btn:hover
+        color: $darkmain
+        border: 1px solid $darkmain
+        background: #ffffff
+        transition: all linear 0.3s
+
+@media( max-width: 700px)
+    .search
+        input
+            font-size: 14px
+        .btn
+            font-size: 14px
+            right: 5px
+            span
+                display: none

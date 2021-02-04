@@ -1,1 +1,173 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "./styles-variables.sass"
+
+@import '~bootstrap/scss/bootstrap'
+body
+    background: rgba(242,242,242,1) !important
+
+.darkbg
+    background: $dark
+
+.orangebg
+    background: $orange
+
+.roboto
+    font-family: "Roboto,system-ui"
+    font-weight: 900
+
+.title
+    font-family: $fontTitle
+    font-weight: 800
+
+.p-roboto
+  font-family: $fontTitle
+.text-main
+  color: $main !important
+
+.hr25
+        height: 6px
+        width: 25%
+        background: #ffffff
+
+.bg-main
+  background: $main !important
+
+.text-white
+  color: #ffffff !important
+
+.btn-main
+  color: $main !important
+  transition: all linear 0.3s
+  background: #00000000 !important
+  border: $main 1px solid !important
+
+
+.btn-main:hover
+  -webkit-box-shadow: 2px 2px 31px -10px $main
+  box-shadow: 2px 2px 31px -10px $main
+  transition: all linear 0.3s
+
+.btn-orange
+  color: $orange !important
+  transition: all linear 0.3s
+  background: #00000000 !important
+  border: $orange 1px solid !important
+
+
+.btn-orange:hover
+  -webkit-box-shadow: 2px 2px 31px -10px $orange
+  box-shadow: 2px 2px 31px -10px $orange
+  transition: all linear 0.3s
+
+.flex
+  display: flex
+  align-items: center
+  justify-content: center
+
+.sizeh5
+  font-size: 1.2rem !important
+  margin: 0 !important
+
+//LOADER CSS
+.lds-roller
+    display: inline-block
+    position: relative
+    width: 80px
+    height: 80px
+
+.lds-roller div
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+    transform-origin: 40px 40px
+
+
+.lds-roller div:after
+    content: " "
+    display: block
+    position: absolute
+    width: 7px
+    height: 7px
+    border-radius: 50%
+    background: #ffffff
+    margin: -4px 0 0 -4px
+
+.lds-roller div:nth-child(1)
+    animation-delay: -0.036s
+
+.lds-roller div:nth-child(1):after
+    top: 63px
+    left: 63px
+
+.lds-roller div:nth-child(2)
+    animation-delay: -0.072s
+
+.lds-roller div:nth-child(2):after
+    top: 68px
+    left: 56px
+
+.lds-roller div:nth-child(3)
+    animation-delay: -0.108s
+
+.lds-roller div:nth-child(3):after
+    top: 71px
+    left: 48px
+
+.lds-roller div:nth-child(4)
+    animation-delay: -0.144s
+
+.lds-roller div:nth-child(4):after
+    top: 72px
+    left: 40px
+
+.lds-roller div:nth-child(5)
+    animation-delay: -0.18s
+
+.lds-roller div:nth-child(5):after
+    top: 71px
+    left: 32px
+
+.lds-roller div:nth-child(6)
+    animation-delay: -0.216s
+
+.lds-roller div:nth-child(6):after
+    top: 68px
+    left: 24px
+
+.lds-roller div:nth-child(7)
+    animation-delay: -0.252s
+
+.lds-roller div:nth-child(7):after
+    top: 63px
+    left: 17px
+
+.lds-roller div:nth-child(8)
+    animation-delay: -0.288s
+
+.lds-roller div:nth-child(8):after
+    top: 56px
+    left: 12px
+
+@media (max-width: 700px)
+  .sizeh5
+    font-size: 1rem !important
+    margin: 0 !important
+
+@keyframes lds-roller
+    0%
+        transform: rotate(0deg)
+
+    100%
+        transform: rotate(360deg)
+
+@keyframes fade
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+@keyframes fadeOut
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+    display: none

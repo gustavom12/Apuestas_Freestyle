@@ -1,0 +1,15 @@
+<section class="search">
+  <div class="bgimg" id="home">
+    <div class="searchcontainer d-flex justify-content-center align-items-end h-100">
+        <app-search (Reload)="searchApuestas($event)" [search]="search"></app-search>
+    </div>
+</div>
+  <h2 class="error text-center h2 mt-2 " *ngIf="!apuestas.length">
+    Por el momento no se encuentran resultados que coincidan con <span class="text-main">"{{search}}"</span>
+  </h2>
+  <div class="apues">
+    <app-apuestas *ngFor="let apuesta of apuestas ; let i = index ; trackBy: trackByMethod"
+    [apuesta]="apuesta "></app-apuestas>
+  </div>
+
+</section>

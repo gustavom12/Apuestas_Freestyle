@@ -1,0 +1,97 @@
+<div
+  class="apuestas mt-4 mx-sm-4 mx-1 pt-4"
+  id="apuestas"
+  #apuestaContainer
+  *ngIf="Apuesta"
+>
+  <div class="container-sm justify-content-center">
+    <div class="row">
+      <div class="col px-3">
+        <div class="content d-flex align-items-center">
+          <div #leftAvatar class="avatar mr-3"></div>
+          <div class="h5 mx-3 title" *ngIf="Apuesta.leftFreestyler">
+            {{ Apuesta.leftFreestyler.nombre }}
+          </div>
+          <img src="" alt="" *ngIf="Apuesta.leftFreestyler" />
+        </div>
+        <!-- <i class="h-100 fas fa-chevron-right"></i> -->
+      </div>
+      <div class="col px-3">
+        <div class="content d-flex justify-content-end align-items-center">
+          <img src="" alt="" *ngIf="Apuesta.rightFreestyler" />
+          <div class="h5 mx-3 title" *ngIf="Apuesta.rightFreestyler">
+            {{ Apuesta.rightFreestyler.nombre }}
+          </div>
+          <div #rightAvatar class="avatar mr-3"></div>
+        </div>
+      </div>
+      <div class="row row2 position-relative">
+        <img
+          class="logo mx-auto"
+          src="https://i.ibb.co/b7JrZwB/fmslogo.jpg"
+          alt=""
+        />
+      </div>
+      <div class="row row3 position-relative">
+        <button
+          class="btn btn-main m-auto flex"
+          #toggleApuestaB
+          (click)="toggleApuesta()"
+        >
+          <h5 class="sizeh5">Apostar</h5>
+        </button>
+        <div class="text-danger text-center">{{ notLoggedError }}</div>
+        <div
+          class="flex flex-column mt-2 realizarApuesta d-none"
+          *ngIf="logged"
+          #apostarDiv
+        >
+          <input
+            type="range"
+            class="form-range w-50"
+            value="0"
+            min="-{{ points }}"
+            max="{{ points }}"
+            step="1"
+            id="customRange1"
+            [value]="inputValue"
+            (input)="inputValue = $event.target.value"
+            (change)="RangeOnChange(inputValue)"
+          />
+          <div class="title">
+            Apostar
+            <a class="points" [ShorterText]="inputValue" [replace]="'-'" #Points
+              >0</a
+            >
+            púntos por:
+            <p class="d-inline freestyler-name">{{ apostarPor }}</p>
+          </div>
+          <div class="title">
+            Púntos a ganar :
+            <p class="d-inline freestyler-name text-main">
+              {{ puntosAGanarDiv }}
+            </p>
+          </div>
+          <button
+            #apostarButton
+            [disabled]="!inputValue"
+            class="apostar btn mt-3"
+            (click)="Apostar()"
+          >
+            Realizar Apuesta
+          </button>
+        </div>
+      </div>
+      <div
+        class="row row4 position-relative w-auto mx-auto justify-content-center"
+        id="votes"
+      >
+        <div id="leftPoints" class="points d-flex align-items-center"></div>
+        <div
+          id="rightPoints"
+          class="points justify-content-end d-flex align-items-center"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>

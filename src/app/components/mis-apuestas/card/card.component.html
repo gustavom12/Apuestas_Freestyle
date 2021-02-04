@@ -1,0 +1,61 @@
+<div
+  class="apuestas mt-5 mx-sm-4 mx-1 pt-4"
+  id="apuestas"
+  #apuestaContainer
+  *ngIf="Apuesta"
+>
+  <div class="container-small justify-content-center">
+    <div class="row">
+      <div class="col px-3">
+        <div class="content d-flex align-items-center">
+          <div #leftAvatar class="avatar mr-3"></div>
+          <div class="h5 mx-3 title" [ngClass]="{'text-main': leftFreestylerApostado}"*ngIf="leftFreestyler" >
+            {{ leftFreestyler.nombre }}
+          </div>
+          <img src="" alt="" *ngIf="leftFreestyler" />
+        </div>
+        <!-- <i class="h-100 fas fa-chevron-right"></i> -->
+      </div>
+      <div class="col px-3">
+        <div class="content d-flex justify-content-end align-items-center">
+          <img src="" alt="" *ngIf="rightFreestyler" />
+          <div class="h5 mx-3 title" *ngIf="rightFreestyler" [ngClass]="{'text-main': rightFreestylerApostado}" >
+            {{ rightFreestyler.nombre }}
+          </div>
+          <div #rightAvatar class="avatar mr-3"></div>
+        </div>
+      </div>
+      <div class="row row2 position-relative">
+        <img
+          class="logo mx-auto"
+          src="https://i.ibb.co/b7JrZwB/fmslogo.jpg"
+          alt=""
+        />
+      </div>
+      <div class="row row3 position-relative container mx-auto">
+        <div class="col container colPoints1">
+          <h6 class="row flex mx-auto">Puntos Apostados:</h6>
+          <span class="row text-main flex">${{Apostado.usedPoints}}</span>
+        </div>
+        <div class="col container colPoints2">
+          <h6 class="row flex">Puntos a ganar:</h6>
+          <span class="text-main row flex">${{Apostado.winPoints}}</span>
+        </div>
+        <div class="col row colPoints3">
+          <h6 class="row mx-auto flex totales">Puntos Totales a Cobrar:</h6>
+          <span class="text-main flex"> ${{Apostado.usedPoints + Apostado.winPoints}}</span>
+        </div>
+      </div>
+        <div
+          class="row row4 position-relative w-auto mx-auto justify-content-center"
+          id="votes"
+        >
+          <div id="leftPoints" class="points d-flex align-items-center"></div>
+          <div
+            id="rightPoints"
+            class="points justify-content-end d-flex align-items-center"
+          ></div>
+        </div>
+    </div>
+  </div>
+</div>

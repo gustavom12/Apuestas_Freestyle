@@ -1,0 +1,66 @@
+@import ../../../styles-variables.sass
+section
+    display: flex
+    justify-content: center
+    align-items: center
+    background: #184861
+    min-height: 90vh
+form
+    margin-top: 4vh
+    margin-bottom: 4vh
+    padding: 30px 50px 50px 50px
+    width: 500px
+    background: $dark
+    color: #ffffff
+    border: 1px solid #024f52
+    border-radius: 15px
+    a
+      font-size: 14px
+      text-decoration: none
+    a:hover
+      text-decoration: none
+    .hr25
+        background: #ff5a13
+    .btn
+        transition: all 0.3s linear
+        color: $orange
+    .btn:hover
+        transition: all 0.3s linear
+        color: #ff5a13
+    .btnactive
+      color: #ff7b00
+    .input
+      width: 100%
+      input
+          width: 100% !important
+          border: 1px solid $main
+          background: #184861 !important
+          color: #ffffff
+          padding: 10px
+          font-size: 18px
+    .sesion
+      background: $orange
+      color: #ffffff
+      transition: all linear 0.3s
+      border: 2px solid $orange
+    .sesion:hover
+      transition: all linear 0.3s
+      color: $orange
+      background: #00000000
+      border: 2px solid $orange
+    label
+      margin-left: 7px !important
+      cursor: pointer
+    .login, .register
+      display: flex
+      align-items: center
+      flex-direction: column
+
+    .form-check-input
+      cursor: pointer
+.lds-loader
+  position: relative
+@media ( max-wisth: 550px)
+  form
+    width: 90%
+    padding: 10px 15px 10px 15px
